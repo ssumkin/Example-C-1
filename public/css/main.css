@@ -84,16 +84,13 @@ a {
 #head-logo span { 
     color: #f6b832;
 }
-
-/* 현 버전에서 적용하면 안 됨 (style 깨짐) */
+ 
 nav > ul > li {
-    width: 100%;
-    height: 40px; 
+    width: 100%; 
     text-align: center;
     line-height: 40px;  
 }
-
-/* 현 버전에서 적용하면 안 됨 (style 깨짐) */
+ 
 nav > ul > li > a {
     width:100%; 
     font-weight:bold;
@@ -102,12 +99,33 @@ nav > ul > li > a {
     display: block;
 }
 
-nav > ul > li > ul > li { 
-    display: none; 
+nav > ul > li > a:hover {
+    color:#222328;
+    background-color:#f6b62c; 
 }
-nav > ul > li:hover > ul > li { 
-    display: block;
+
+nav > ul > li > ul { 
+    display: none;  
+ 
 }
+nav > ul > li:hover > ul { 
+    display: block; 
+}
+
+nav > ul > li > ul > li > a {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    background-color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav > ul > li > ul > li > a:hover {
+    color:#f6b62c;
+    background-color: #777777;
+}
+
 
 /* 콘텐츠 영역 스타일 */
 #body-wrap {  
@@ -183,6 +201,23 @@ nav > ul > li:hover > ul > li {
     margin-bottom: 10px;
 }
 
+/* 공지사항 갤러리 중 보여지는 리스트 영역 스타일 */
+.active > a {
+    font-weight: bold;
+}
+
+.active > a:active {
+    color: red !important;
+}
+
+.none > a {
+    background-color: #eeeeee;
+}
+
+.none > a:hover {
+    background-color: #f6b62c;
+}
+
 /* 공지사항, 갤러리 스타일 */
 #noti-gal {
     position: relative;
@@ -216,7 +251,7 @@ nav > ul > li:hover > ul > li {
     height: 32px;
     border: 1px solid #dddddd; 
 }
- 
+  
 #notice ul {
     position: relative;
     top:-32px;
