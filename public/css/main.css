@@ -54,12 +54,16 @@ a {
 }
 
 /* 헤더 스타일 */
-#header { 
+#header {  
     max-width: 200px;
     height: 100%;
     margin-right: 10px;
     background-color: #bbbbbb;
     padding: 0;
+}
+
+#header-menu {
+    display: none;
 }
 
 #head-logo {
@@ -128,8 +132,7 @@ nav > ul > li > ul > li > a:hover {
 
 
 /* 콘텐츠 영역 스타일 */
-#body-wrap {  
-    width: 100%;
+#body-wrap {   
     max-width: 790px;
     height: 100%; 
     padding: 0; 
@@ -146,7 +149,6 @@ nav > ul > li > ul > li > a:hover {
     width: 100%;
     height: 350px;
 } 
-
 
 #slide-image1 {  
     background-image: url(../images/slide1.jpg);
@@ -202,20 +204,24 @@ nav > ul > li > ul > li > a:hover {
 }
 
 /* 공지사항 갤러리 중 보여지는 리스트 영역 스타일 */
-.active > a {
+.tab-menu-on > a {
     font-weight: bold;
 }
 
-.active > a:active {
+.tab-menu-on > a:active {
     color: red !important;
 }
 
-.none > a {
+.tab-menu-off > a {
     background-color: #eeeeee;
 }
 
-.none > a:hover {
+.tab-menu-off > a:hover {
     background-color: #f6b62c;
+}
+
+.tab-menu-off > a:active {
+    color: red !important;
 }
 
 /* 공지사항, 갤러리 스타일 */
@@ -238,7 +244,7 @@ nav > ul > li > ul > li > a:hover {
     height: calc(200px - 32px);    
     box-sizing: border-box;
     font-size: 14px;
-    z-index: 2;
+    z-index: 200;
     background-color: white;
 }
 
@@ -302,6 +308,7 @@ nav > ul > li > ul > li > a:hover {
     font-size: 14px; 
     border: 1px solid #dddddd;
     background-color: white;
+    z-index:100;
 }
 
 #gallery > a { 
@@ -456,7 +463,7 @@ footer {
 }
 
 #footer-menu {
-    margin-left:10%;
+    margin-left:4%;
 }
 
 #footer-menu > div:nth-child(1) {
@@ -484,3 +491,148 @@ footer {
     text-align: center;
     color: white;
 }
+
+/* 반응형을 위한 스타일 */
+@media screen and (min-width: 992px) and (max-width:1199px) {
+    #body-wrap {
+        max-width: 750px;
+    }
+
+    #noti-gal {
+        max-width: 420px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #head-logo h1 {
+        font-size: 1.8em; 
+    }
+    
+    #body-wrap {
+        max-width: 530px;
+    }
+
+    #noti-gal {
+        max-width: 420px;
+    }
+
+    #banner, 
+    #nowgo {
+        width: 100px;
+    }
+
+    #banner div, 
+    #nowgo div {
+        width: 44%;
+        font-size: 15px;
+        
+    }
+    
+    #nowgo div {
+        top:47%;
+    }
+
+    #nowgo div a {
+        line-height: 25px;
+    }
+
+    #gallery ul li img {
+        top:25%;
+    }
+
+    #footer-logo {
+        max-width: 170px;
+    }
+    
+    #footer-logo h1 {
+        font-size: 1.7em; 
+    }
+
+    #footer-menu {
+        width: 65%;
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    #footer-menu p {
+        font-size:12px;
+    }
+
+
+}
+
+/* 모바일 환경에 맞도록 스타일 수정한 부분 */
+/* 기존 헤더 상시 노출 되는걸 숨긴 상태로 바꾸고 버튼 클릭시 보이도록 변경 */
+@media screen and (max-width: 767px) {
+    
+    #header-menu { 
+        display: block;
+        position: relative; 
+        z-index: 1;
+        left: calc(165%);
+    }
+    
+    #header {   
+        min-width: 185px;
+        height: 710px;
+        position: relative; 
+        z-index: 1000; 
+        left: -300px; 
+    }
+ 
+    #header-wrap {
+        width: 100%;
+        position: absolute;
+        top:0;
+    }
+
+    #head-logo h1 {
+        font-size: 1.8em; 
+    }
+ 
+    #body-wrap {
+        position: absolute; 
+    }
+
+    #noti-gal {
+        max-width: none;
+        position: relative;
+        left: 0;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #banner,
+    #nowgo { 
+        max-width: 300px;
+        width: calc(50% - 5px);
+        height: 130px;
+    } 
+
+    footer {
+        position: relative;
+        top: 140px;
+    }
+
+    #footer-logo {
+        margin-left: 0;
+        max-width: 160px;
+    }
+
+    #footer-logo h1 {
+        font-size: 1.5em; 
+    }
+
+    #footer-menu {
+        width: 65%;
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    #footer-menu p {
+        font-size:11px;
+    }
+
+}
+
+ 
